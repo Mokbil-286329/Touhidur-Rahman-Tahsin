@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DUCSU 2025 - Candidate for Samajsheba Shompadok</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Global Style */
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; }
+    header { background: #00539C; color: white; padding: 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 1.8em; }
+    header h2 { margin: 5px 0; font-weight: normal; font-size: 1.2em; }
+    img.profile { width: 150px; border-radius: 50%; margin: 10px auto; display: block; }
+    .container { max-width: 900px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    section { margin-bottom: 30px; }
+    h3 { color: #00539C; margin-bottom: 10px; }
+    .update { background: #f1f1f1; padding: 10px; border-radius: 5px; margin-bottom: 10px; }
+    form input, form textarea { width: 100%; padding: 10px; margin: 8px 0; border: 1px solid #ccc; border-radius: 5px; }
+    form button { background: #00539C; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
+    footer { text-align: center; padding: 15px; background: #eee; margin-top: 30px; }
+
+    /* Slider */
+    .slider { position: relative; overflow: hidden; max-width: 100%; height: 200px; margin: auto; background: #f0f0f0; border-radius: 10px; }
+    .slides { display: flex; transition: transform 0.5s ease-in-out; }
+    .slide { min-width: 100%; display: flex; justify-content: center; align-items: center; font-size: 1.2em; padding: 20px; color: #333; }
+    .slider-controls { position: absolute; width: 100%; top: 50%; transform: translateY(-50%); display: flex; justify-content: space-between; }
+    .slider-controls button { background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5em; }
+      header h2 { font-size: 1em; }
+      img.profile { width: 120px; }
+      .slide { font-size: 1em; padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>[Your Friend’s Name]</h1>
+    <h2>Candidate for Samajsheba Shompadok | DUCSU 2025</h2>
+    <img src="profile.jpg" alt="Candidate Photo" class="profile">
+    <p><i>“সবার জন্য সমান সুযোগ”</i></p>
+  </header>
+
+  <div class="container">
+
+    <!-- Manifesto Slider -->
+    <section>
+      <h3>Election Manifesto</h3>
+      <div class="slider">
+        <div class="slides">
+          <div class="slide">✔ ছাত্রকল্যাণ তহবিল বৃদ্ধি</div>
+          <div class="slide">✔ সমাজসেবা ক্যাম্প আয়োজন</div>
+          <div class="slide">✔ সাংস্কৃতিক ও ক্রীড়া কার্যক্রমে সহায়তা</div>
+          <div class="slide">✔ হয়রানি প্রতিরোধ ব্যবস্থা</div>
+        </div>
+        <div class="slider-controls">
+          <button onclick="prevSlide()">❮</button>
+          <button onclick="nextSlide()">❯</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Updates -->
+    <section>
+      <h3>Campaign Updates</h3>
+      <div class="update">🚩 1 Sept 2025: প্রচারণা শুরু হয়েছে বিজয় একাত্তর হলে</div>
+      <div class="update">📢 3 Sept 2025: শিক্ষার্থীদের সাথে মতবিনিময় অনুষ্ঠিত</div>
+    </section>
+
+    <!-- Suggestion Box -->
+    <section>
+      <h3>Suggestion Box</h3>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <input type="text" name="name" placeholder="Your Name">
+        <textarea name="message" rows="4" placeholder="Your Suggestion"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <!-- Contact -->
+    <section>
+      <h3>Contact</h3>
+      <p>📞 Phone: 01XXXXXXXXX</p>
+      <p>✉️ Email: example@email.com</p>
+      <p>🌐 Facebook: <a href="#" target="_blank">Visit Page</a></p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2025 [Your Friend’s Name] | DUCSU Election Campaign</p>
+  </footer>
+
+  <!-- Slider Script -->
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    function showSlide(index) {
+      if (index < 0) currentIndex = totalSlides - 1;
+      else if (index >= totalSlides) currentIndex = 0;
+      else currentIndex = index;
+      slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() { showSlide(currentIndex + 1); }
+    function prevSlide() { showSlide(currentIndex - 1); }
+
+    // Auto Slide
+    setInterval(() => { nextSlide(); }, 4000);
+  </script>
+
+</body>
+</html>
 
