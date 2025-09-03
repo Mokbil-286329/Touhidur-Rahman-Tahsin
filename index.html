@@ -96,12 +96,32 @@
         }
         
         /* Hero Section */
-        .hero {
-            padding: 80px 0;
-            background: linear-gradient(rgba(29, 53, 86, 0.8), rgba(29, 53, 86, 0.9)), url('https://images.unsplash.com/photo-1562564052-9b4b9d4d936d?ixlib=rb-4.0.3') center/cover no-repeat;
-            color: white;
-            text-align: center;
-        }
+.hero {
+    position: relative;
+    padding: 80px 0;
+    background: url('Sheikh-Mujibur-Rahman-Hall-of-DU-c67e5a5d5bb5642a0c92f28286d81a45.png') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+/* Optional: hero content overlay-এর উপরে রাখার জন্য */
+.hero * {
+    position: relative;
+    z-index: 1;
+}
+
         
         .profile-container {
             display: flex;
